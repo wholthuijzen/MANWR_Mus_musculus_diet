@@ -1,4 +1,4 @@
-setwd("H:/Consumer data with outliers removed")
+# Load packages and files
 library(MixSIAR)
 library(tidyverse)
 mix.filename <- "mouse_consumer.csv"
@@ -6,7 +6,7 @@ source.filename <- "mouse_sources_raw.csv"
 discr.filename <- "mouse_DTDF.csv"
 options(max.print=5.5E5)
 
-## Add "habitat" as a random effect, "session" as a random effect
+## Add "habitat" and "session" as a random effect
 ## Import consumer "mix" data
 mix <- load_mix_data(filename="mouse_consumer.csv",
                      iso_names=c("d13C","d15N"),
@@ -25,9 +25,7 @@ source <- load_source_data(filename="mouse_sources_raw.csv",
 ### Import DTDF data
 discr <- load_discr_data(filename="mouse_DTDF.csv", mix)
 
-### Set working directory for habitat and session model output
-dir.create("H:/Consumer data with outliers removed/8modhabxses_output")
-setwd("H:/Consumer data with outliers removed/8modhabxses_output")
+### Make new folder for habitat and session model output
 
 ### Make an isospace plot
 plot_data(filename="isospace_plot_mod8habxses_verylong", plot_save_pdf=TRUE, plot_save_png=FALSE, mix,source,discr)
@@ -53,7 +51,7 @@ resid_err <- TRUE
 process_err <- TRUE
 write_JAGS_model(model_filename, resid_err, process_err, mix, source)
 
-jags.mod8habxses <- run_model(run="very long", mix, source, discr, model_filename)
+jags.mod8habxses <- run_model(run="test", mix, source, discr, model_filename)
 
 output_options <- list(summary_save = TRUE,
                        summary_name = "summary_statistics_mod8habxses",
