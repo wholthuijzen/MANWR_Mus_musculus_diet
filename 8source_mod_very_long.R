@@ -1,6 +1,6 @@
-# Load packages and files
+# Install/load packages and files
+remotes::install_github("brianstock/MixSIAR", dependencies=T)
 library(MixSIAR)
-library(tidyverse)
 mix.filename <- "mouse_consumer.csv"
 source.filename <- "mouse_sources_raw.csv"
 discr.filename <- "mouse_DTDF.csv"
