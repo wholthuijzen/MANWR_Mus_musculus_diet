@@ -1,6 +1,10 @@
 # Install/load packages and files
-remotes::install_github("brianstock/MixSIAR", dependencies=T)
-library(MixSIAR)
+if (!require(MixSIAR)) {
+  warning("autoinstalling MixSIAR")
+  library(devtools)
+  remotes::install_github("brianstock/MixSIAR", dependencies=T)
+  library(MixSIAR)
+}
 mix.filename <- "mouse_consumer.csv"
 source.filename <- "mouse_sources_raw.csv"
 discr.filename <- "mouse_DTDF.csv"
