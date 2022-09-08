@@ -36,6 +36,6 @@ resid_err <- TRUE
 process_err <- TRUE
 write_JAGS_model(model_filename, resid_err, process_err, mix, source)
 
-jags.mod8habxses <- run_model(run="very long", mix, source, discr, model_filename)
+jags.mod8habxses <- run_model(run="test", mix, source, discr, model_filename)
 
 saveRDS(jags.mod8habxses, "jags.mod8habxses.Rds")
