@@ -2,7 +2,7 @@
 if (!require(MixSIAR)) {
   warning("autoinstalling MixSIAR")
   library(devtools)
-  remotes::install_github("brianstock/MixSIAR", dependencies=T)
+  remotes::install_github("brianstock/MixSIAR", dependencies=T, upgrade="never")
   library(MixSIAR)
 }
 mix.filename <- "mouse_consumer.csv"
