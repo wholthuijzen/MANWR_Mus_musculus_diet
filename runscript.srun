@@ -1,0 +1,5 @@
+R_version=4.1.2-foss-2021b
+module load R/$R_version JAGS/4.3.0-foss-2021b
+[[ -d ~/R/$R_version ]] || mkdir -p ~/R/$R_version
+export R_LIBS_USER="~/R/$R_version/"
+Rscript 8source_mod_very_long.R
