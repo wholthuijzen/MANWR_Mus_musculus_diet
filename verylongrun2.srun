@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=verylongrun
+#SBATCH --job-name=verylongrun2
 #SBATCH --output=log/%x_%j.out
 
 #SBATCH --time=1-0
